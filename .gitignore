@@ -1,0 +1,5 @@
+/venv
+/.idea
+/__pycache__
+/Finance_Dashboard/__pycache__
+db.sqlite3
