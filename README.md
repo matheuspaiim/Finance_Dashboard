@@ -1,4 +1,4 @@
-# Finance_Dashboard
+# Finance Dashboard
 
 ### Jogo da velha em python utilizando programação orientada a objetos.
 
