@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-1+ma@v5fl0#^dixi*z5a75k=0!+r0h5d-29s)xcgaqxf#!p407
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['personalfinance-dashboard.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -124,6 +125,18 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 
 ]
+
+if os.getcwd() == '/app':
+    import dj_database_url
+    db_from_env = dj_database_url.config(conn_max_age=500)
+    DATABASES['default'].update(db_from_env)
+    #Honor the 'X-forwarded-photo' header for request.is_secure().
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FOWARDED_PHOTO', 'https')
+    #Allow all host headers
+    ALLOWED_HOSTS = ['personalfinance-dashboard.herokuapp.com']
+    DEBUG = True
+
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
