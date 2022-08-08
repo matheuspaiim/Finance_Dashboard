@@ -18,7 +18,7 @@ Você pode abrir diretamente o projeto no Heruko [nesse link](https://personalfi
 ## Como rodar o projeto e fazer alterações:
 
 1. Baixe e instale [Python](https://www.python.org/downloads/), [VisualStudioCode](https://code.visualstudio.com/download) ou [Pycharm](https://www.jetbrains.com/pt-br/pycharm/download/) e instale Django no terminal com o comando: 'pip install Django==4.1'.
-2. Abra a pasta do projeto no VisualStudioCode e e execute no terminal o comando 'python manage.py runserver'.
+2. Abra a pasta do projeto no VisualStudioCode ou no Pycharm e e execute no terminal o comando 'python manage.py runserver'.
 
 ## Screenshots:
 
