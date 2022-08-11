@@ -26,5 +26,6 @@ urlpatterns = [
     path('login.html', TemplateView.as_view(template_name='account/login.html')),
     path('register.html', TemplateView.as_view(template_name='account/register.html')),
     path('tables.html', TemplateView.as_view(template_name='website/tables.html')),
+    path('form.html', TemplateView.as_view(template_name='website/form.html')),
     path('', TemplateView.as_view(template_name='website/index.html'))
 ]
