@@ -611,7 +611,7 @@ input {
 /* ==========================================================================
    #CARD
    ========================================================================== */
-.card {
+.card-f {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -629,8 +629,8 @@ input {
 }
 
 .card-4 .card-body {
-  padding: 57px 65px;
-  padding-bottom: 65px;
+  padding: 3.563rem 4rem;
+  padding-bottom: 4rem;
 }
 
 @media (max-width: 767px) {

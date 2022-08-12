@@ -10155,7 +10155,7 @@ a:focus {
 
 .sidebar .nav-item .nav-link .badge-counter,
 .topbar .nav-item .nav-link .badge-counter {
-  position: absolute;
+
   transform: scale(0.7);
   transform-origin: top right;
   right: .25rem;
@@ -10463,6 +10463,7 @@ a:focus {
 .bar-chart-3{
   font-size: 3rem;
 }
+
 .sidebar .sidebar-brand .sidebar-brand-icon i {
   font-size: 3rem;
 }
