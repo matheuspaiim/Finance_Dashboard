@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.views.generic import TemplateView
 
 urlpatterns = [
@@ -23,10 +23,10 @@ urlpatterns = [
     path('index.html', TemplateView.as_view(template_name='website/index.html')),
     path('404.html', TemplateView.as_view(template_name='website/404.html')),
     path('charts.html', TemplateView.as_view(template_name='website/charts.html')),
-    path('forgot-password.html', TemplateView.as_view(template_name='account/forgot-password.html')),
-    path('login.html', TemplateView.as_view(template_name='account/login.html')),
-    path('register.html', TemplateView.as_view(template_name='account/register.html')),
-    path('tables.html', TemplateView.as_view(template_name='website/tables.html')),
-    path('registry.html', TemplateView.as_view(template_name='website/registry.html')),
-    path('investments.html', TemplateView.as_view(template_name='website/investments.html')),
+    path('forgot-password.html', TemplateView.as_view(template_name='accounts/forgot-password.html')),
+    path('login.html', TemplateView.as_view(template_name='accounts/login.html')),
+    path('register.html', TemplateView.as_view(template_name='accounts/register.html')),
+    path('form.html', TemplateView.as_view(template_name='investments/form.html')),
+    path('tables.html', TemplateView.as_view(template_name='investments/tables.html')),
+    path('investments.html', TemplateView.as_view(template_name='investments/investments.html')),
 ]

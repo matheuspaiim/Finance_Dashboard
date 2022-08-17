@@ -11817,13 +11817,13 @@ var Scale = core_element.extend({
 					paddingRight = lastLabelSize.width / 2;
 				}
 
-				// Adjust padding taking into account changes in offsets
+				// Adjust padding taking into accounts changes in offsets
 				// and add 3 px to move away from canvas edges
 				me.paddingLeft = Math.max((paddingLeft - offsetLeft) * me.width / (me.width - offsetLeft), 0) + 3;
 				me.paddingRight = Math.max((paddingRight - offsetRight) * me.width / (me.width - offsetRight), 0) + 3;
 			} else {
 				// A vertical axis is more constrained by the width. Labels are the
-				// dominant factor here, so get that length first and account for padding
+				// dominant factor here, so get that length first and accounts for padding
 				var labelWidth = tickOpts.mirror ? 0 :
 					// use lineSpace for consistency with horizontal axis
 					// tickPadding is not implemented for horizontal
@@ -13801,7 +13801,7 @@ var scale_radialLinear = scale_linearbase.extend({
 			return NaN;
 		}
 
-		// Take into account half font size + the yPadding of the top value
+		// Take into accounts half font size + the yPadding of the top value
 		var scalingFactor = me.drawingArea / (me.max - me.min);
 		if (me.options.ticks.reverse) {
 			return (me.max - value) * scalingFactor;
@@ -18953,7 +18953,7 @@ var moment = createCommonjsModule(function (module, exports) {
     }
 
     function daysToMonths (days) {
-        // 400 years have 146097 days (taking into account leap year rules)
+        // 400 years have 146097 days (taking into accounts leap year rules)
         // 400 years have 12 months === 4800
         return days * 4800 / 146097;
     }

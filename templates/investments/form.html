@@ -13,7 +13,7 @@
 
     <!-- Title Page-->
     <title>Adicionar Registro</title>
-    <link rel="icon" href="/static/img/income.png">
+    <link rel="icon" href="/img/income.png">
         <!-- Custom fonts for this template-->
     <link href="{% static 'fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
     <link
@@ -72,20 +72,19 @@
                                         <div class="col-2-f">
                                             <div class="input-group-f">
                                                 <label class="label">Descrição</label>
-                                                <input class="input--style-4" type="text" name="first_name">
+                                                <input class="input--style-4" type="text" name="description">
                                             </div>
                                         </div>
                                     </div>
                                         <div class="col-2-f">
                                             <div class="input-group-f">
-
                                                 <div class="p-t-10">
                                                     <label class="radio-container m-r-45">Receita
-                                                        <input type="radio" checked="checked" name="gender">
+                                                        <input type="radio" checked="checked" name="revenue">
                                                         <span class="checkmark"></span>
                                                     </label>
                                                     <label class="radio-container">Despesa
-                                                        <input type="radio" name="gender">
+                                                        <input type="radio" name="expense">
                                                         <span class="checkmark"></span>
                                                     </label>
                                                 </div>
@@ -96,7 +95,7 @@
                                             <div class="input-group-f">
                                                 <label class="label">Data</label>
                                                 <div class="input-group-icon">
-                                                    <input class="input--style-4 js-datepicker" type="text" name="birthday">
+                                                    <input class="input--style-4 js-datepicker" type="text" name="date">
                                                     <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                                 </div>
                                             </div>
@@ -105,15 +104,15 @@
                                     <div class="row-f row-space">
                                         <div class="col-2-f">
                                             <div class="input-group-f">
-                                                <label class="label">Valor</label>
-                                                <input class="input--style-4" type="number" step="0.01" name="quantity" min="0.01">
+                                                <label class="label">Quantia</label>
+                                                <input class="input--style-4" type="number" step="0.01" name="amount" min="0.01">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="input-group-f">
                                         <label class="label">Categoria</label>
                                         <div class="rs-select2 js-select-simple select--no-search">
-                                            <select name="subject">
+                                            <select name="category">
                                                 <option disabled="disabled" selected="selected">Selecionar</option>
                                                 <option>Comida e Bebida</option>
                                                 <option>Compras</option>
