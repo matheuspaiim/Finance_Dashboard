@@ -580,6 +580,7 @@ pre code {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
     max-width: 1140px;
   }
+
 }
 
 .row {
@@ -631,6 +632,7 @@ pre code {
 .row-cols-3 > * {
   flex: 0 0 33.33333%;
   max-width: 33.33333%;
+  margin-top: -40%;
 }
 
 .row-cols-4 > * {
@@ -11284,7 +11286,4 @@ body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
 
-/* ==========================================================================
-   #FORM
-   ========================================================================== */
 

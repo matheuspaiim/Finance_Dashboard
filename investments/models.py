@@ -1,7 +1,12 @@
 from django.db import models
-
-
+from django import forms
 # Create your models here.
+
+CHOICES = (
+    ('expense', 'Despesa'),
+    ('revenue', 'Receita')
+)
+
 
 class Category(models.Model):
     select = models.CharField(max_length=30)
@@ -13,8 +18,7 @@ class Category(models.Model):
 class Money(models.Model):
     description = models.CharField(max_length=255)
     select = models.CharField(max_length=30)
-    revenue = models.BooleanField(True)
-    expense = models.BooleanField(False)
+    choice = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
     date = models.DateField
     amount = models.FloatField
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
