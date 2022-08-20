@@ -6446,6 +6446,7 @@ button.bg-success:focus {
   background-color: #36b9cc !important;
 }
 
+
 a.bg-info:hover, a.bg-info:focus,
 button.bg-info:hover,
 button.bg-info:focus {
@@ -9949,6 +9950,11 @@ a:focus {
   background-size: cover;
 }
 
+.bg-gradient-custom {
+  background: rgb(107,12,250);
+  background: radial-gradient(circle, rgba(107,12,250,1) 0%, rgba(133,189,255,1) 100%);
+}
+
 .bg-gray-100 {
   background-color: #f8f9fc !important;
 }
@@ -11285,5 +11291,4 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
-
 

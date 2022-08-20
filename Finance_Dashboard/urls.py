@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='website/index.html')),
     path('index.html', TemplateView.as_view(template_name='website/index.html')),
-    path('404.html', TemplateView.as_view(template_name='website/404.html')),
+    path('404.html', TemplateView.as_view(template_name='website/../templates/investments/404.html')),
     path('charts.html', TemplateView.as_view(template_name='website/charts.html')),
     path('forgot-password.html', TemplateView.as_view(template_name='accounts/forgot-password.html')),
     path('login.html', TemplateView.as_view(template_name='accounts/login.html')),

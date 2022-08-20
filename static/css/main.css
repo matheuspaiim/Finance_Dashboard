@@ -351,6 +351,37 @@ input[type="date" i] {
   outline: none;
 }
 
+
+@media (min-width: 576px) {
+  .illustration-1 {
+
+  }
+}
+
+@media (min-width: 768px) {
+  .illustration-1 {
+
+  }
+}
+
+@media (min-width: 992px) {
+  .illustration-1 {
+
+  }
+}
+
+@media (min-width: 1200px) {
+.illustration-1 {
+  position: relative;
+  height: 20rem;
+  top: 1rem;
+  right: 0rem;
+}
+.illustration-1-position {
+  position: absolute;
+  top: 20rem;
+}
+}
 /* ==========================================================================
    #FORM
    ========================================================================== */
