@@ -228,6 +228,7 @@ h6 {
 .wrapper-f {
   margin: 0 auto;
   padding-bottom: 4rem;
+  position: relative;
 }
 
 .wrapper--w960 {
@@ -352,21 +353,26 @@ input[type="date" i] {
 }
 
 
-@media (min-width: 576px) {
-  .illustration-1 {
-
-  }
+@media (max-width: 768px) {
+  .pattern {
+    display: none;
 }
 
-@media (min-width: 768px) {
-  .illustration-1 {
+}
 
-  }
+
+@media (min-width: 768px) {
+  .pattern {
+    position: absolute;
+    width: 72%;
+    height: 90%;
+    padding-top: 3.4rem;
+}
 }
 
 @media (min-width: 992px) {
-  .illustration-1 {
-
+  .pattern{
+    width: 74.5%;
   }
 }
 
@@ -376,11 +382,16 @@ input[type="date" i] {
   height: 20rem;
   top: 1rem;
   right: 0rem;
+  display: none;
 }
 .illustration-1-position {
   position: absolute;
   top: 20rem;
+  display: none;
 }
+  .pattern{
+    width: 79%;
+  }
 }
 /* ==========================================================================
    #FORM
