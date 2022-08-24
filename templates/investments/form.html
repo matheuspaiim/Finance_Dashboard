@@ -53,8 +53,8 @@
             {%  include "website/topbar.html" %}
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
-                    <img class="pattern" src="/static/img/patternpad.svg">
+                <div class="container-fluid ">
+
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800"></h1>
@@ -63,11 +63,12 @@
                     </div>
 
                     <div class="wrapper-f wrapper--w480">
+
                         <!-- Form -->
                         <div class="card-f card-4 row">
                             <div class="card-body">
                                 <h2 class="title">Novo Registro</h2>
-                                <form method="POST">
+                                <form method="post">
                                     <div class="row-f row-space">
                                         <div class="col-2-f">
                                             <div class="input-group-f">
@@ -79,11 +80,11 @@
                                         <div class="col-2-f">
                                             <div class="input-group-f">
                                                 <div class="p-t-10">
-                                                    <label for="radio-receita" class="radio-container m-r-45">Receita
+                                                    <label class="radio-container m-r-45">Receita
                                                         <input type="radio" name="RadioDefault" value="Receita">
                                                         <span class="checkmark"></span>
                                                     </label>
-                                                    <label for="radio-despesa" class="radio-container">Despesa
+                                                    <label class="radio-container">Despesa
                                                         <input type="radio" name="RadioDefault" value="Despesa">
                                                         <span class="checkmark"></span>
                                                     </label>
@@ -137,12 +138,16 @@
                         <!-- End of Form -->
                         </div>
                     </div>
-
-                    <!-- Illustration -->
-                    <div class="illustration-1-position">
-
-                    </div>
                 </div>
+                <!-- Footer -->
+                <footer class="sticky-footer bg-dark shadow-lg">
+                    <div class="container my-auto">
+                        <div class="copyright text-center text-white my-auto">
+                            <span>2022 © Personal Finance Dashboard, Matheus Paim. Todos os direitos reservados.</span>
+                        </div>
+                    </div>
+                </footer>
+            <!-- End of Footer -->
             </div>
         <!-- End of Content Wrapper -->
         </div>

@@ -15,13 +15,13 @@ class Category(models.Model):
         return self.select
 
 
-class Money(models.Model):
-    description = models.CharField(max_length=255)
-    select = models.CharField(max_length=30)
-    choice = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
-    date = models.DateField
-    amount = models.FloatField
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+class Registro(models.Model):
+    descricao = models.CharField(max_length=255)
+    selecao = models.CharField(max_length=30)
+    escolha = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
+    data_entrada = models.DateField
+    quantia = models.FloatField
+    categoria = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
-        return self.select
+        return self.selecao
