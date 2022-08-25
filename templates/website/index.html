@@ -21,6 +21,8 @@
 
     <!-- Custom styles for this template-->
     <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
+    <!-- Secondary CSS-->
+    <link href="{% static 'vendor/css/main.css' %}" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -35,7 +37,7 @@
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
-            <div id="content">
+            <div id="content" class="bg-gradient-dark">
 
         {%  include "website/topbar.html" %}
 
@@ -44,17 +46,18 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Painel</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-dark shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Gerar relatório</a>
+                        <h1 class="h3 mb-0 text-white">Painel</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-light shadow-w"><i
+                                class="fas fa-download fa-sm "></i> Gerar relatório</a>
                     </div>
+
 
                     <!-- Content Row -->
                     <div class="row">
 
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card border-left-primary shadow-w h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
@@ -72,7 +75,7 @@
 
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card border-left-success shadow-w h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
@@ -90,7 +93,7 @@
 
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
+                            <div class="card border-left-info shadow-w h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
@@ -119,7 +122,7 @@
 
                         <!-- Pending Requests Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card border-left-warning shadow-w h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
@@ -142,7 +145,7 @@
 
                         <!-- Area Chart -->
                         <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
+                            <div class="card shadow-w mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -152,7 +155,7 @@
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                         </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                        <div class="dropdown-menu dropdown-menu-right shadow-w animated--fade-in"
                                             aria-labelledby="dropdownMenuLink">
                                             <div class="dropdown-header">Dropdown Header:</div>
                                             <a class="dropdown-item" href="#">Action</a>
@@ -173,7 +176,7 @@
 
                         <!-- Pie Chart -->
                         <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
+                            <div class="card shadow-w mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Fontes de Renda</h6>
@@ -182,7 +185,7 @@
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                         </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                        <div class="dropdown-menu dropdown-menu-right shadow-w animated--fade-in"
                                             aria-labelledby="dropdownMenuLink">
                                             <div class="dropdown-header">Dropdown Header:</div>
                                             <a class="dropdown-item" href="#">Action</a>
@@ -229,14 +232,14 @@
             </div>
             <!-- End of Main Content -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-dark shadow-lg">
-                <div class="container my-auto">
-                    <div class="copyright text-center text-white my-auto">
-                        <span>2022 © Personal Finance Dashboard, Matheus Paim. Todos os direitos reservados.</span>
+                <!-- Footer -->
+                <footer class="sticky-footer shadow-f-2">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>2022 © Personal Finance Dashboard, Matheus Paim. Todos os direitos reservados.</span>
+                        </div>
                     </div>
-                </div>
-            </footer>
+                </footer>
             <!-- End of Footer -->
 
         </div>

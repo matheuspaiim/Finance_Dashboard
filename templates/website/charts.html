@@ -21,6 +21,8 @@
 
     <!-- Custom styles for this template-->
     <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
+    <!-- Secondary CSS-->
+    <link href="{% static 'vendor/css/main.css' %}" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -35,7 +37,7 @@
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
-            <div id="content">
+            <div id="content" class="bg-gradient-dark">
 
             {%  include "website/topbar.html" %}
 
@@ -43,8 +45,11 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Gráficos</h1>
-                    <p class="mb-4"></p>
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-white">Gráficos</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-light shadow-w"><i
+                                class="fas fa-download fa-sm "></i> Gerar relatório</a>
+                    </div>
 
                     <!-- Content Row -->
                     <div class="row">
@@ -52,7 +57,7 @@
                         <div class="col-xl-8 col-lg-7">
 
                             <!-- Area Chart -->
-                            <div class="card shadow mb-4">
+                            <div class="card shadow-w mb-4">
                                 <div class="card-header py-3">
                                     <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
                                 </div>
@@ -66,7 +71,7 @@
                             </div>
 
                             <!-- Bar Chart -->
-                            <div class="card shadow mb-4">
+                            <div class="card shadow-w mb-4">
                                 <div class="card-header py-3">
                                     <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
                                 </div>
@@ -82,7 +87,7 @@
 
                         <!-- Donut Chart -->
                         <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
+                            <div class="card shadow-w mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div class="card-header py-3">
                                     <h6 class="m-0 font-weight-bold text-primary">Donut Chart</h6>
@@ -104,14 +109,14 @@
             </div>
             <!-- End of Main Content -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-dark shadow-lg">
-                <div class="container my-auto">
-                    <div class="copyright text-center text-white my-auto">
-                        <span>2022 © Personal Finance Dashboard, Matheus Paim. Todos os direitos reservados.</span>
+                <!-- Footer -->
+                <footer class="sticky-footer shadow-f-2">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>2022 © Personal Finance Dashboard, Matheus Paim. Todos os direitos reservados.</span>
+                        </div>
                     </div>
-                </div>
-            </footer>
+                </footer>
             <!-- End of Footer -->
 
         </div>
