@@ -26,7 +26,7 @@ class Registry(models.Model):
     escolha = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
     data_entrada = models.DateTimeField(auto_now_add=True, null=True)
     quantia = models.FloatField
-    categoria = models.ForeignKey(CATEGORY, on_delete=models.SET_NULL, null=True)
+    categoria = models.CharField(max_length=200, null=True, choices=CATEGORY)
 
     def __str__(self):
         return self.selecao
