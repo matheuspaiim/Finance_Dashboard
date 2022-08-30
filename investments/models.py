@@ -19,7 +19,7 @@ class Registry(models.Model):
         ('Despesas Financeiras', 'Despesas Financeiras'),
         ('Investimentos', 'Investimentos'),
         ('Renda', 'Renda'),
-        ('Outro', 'Outro'),
+        ('Outro', 'Outro')
     )
     descricao = models.CharField(max_length=255)
     selecao = models.CharField(max_length=30)
