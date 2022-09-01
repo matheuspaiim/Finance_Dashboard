@@ -6,22 +6,6 @@ from .forms import RegistryForm
 
 # Create your views here.
 
-def tables(request):
-    registries = Registry.objects.all()
-
-    income = registries.filter(status='Receita').count()
-    expense = registries.filter(status='Despesa').count()
-
-    choices = {'Receita': Receita, 'Despesa': Despesa}
-
-    return render(request, 'investments/tables.html', choices)
-
-
-def registry(request):
-    registry = Registry.objects.all()
-
-    return render(request, 'investments/tables.html', {'registry': registry})
-
 
 def createRegistry(request):
     form = RegistryForm()
@@ -47,7 +31,7 @@ def updateRegistry(request, pk):
             return redirect('/')
 
     context = {'form': form}
-    return render(request, 'investments/tables.html', context)
+    return render(request, 'investments/form.html', context)
 
 
 def deleteRegistry(request, pk):

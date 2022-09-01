@@ -79,7 +79,7 @@
                         <div class="card-f card-4 row">
                             <div class="card-body index">
                                 <h2 class="title">Novo Registro</h2>
-                                <form method="post">
+                                <form method="POST">{% csrf_token %}
                                     <div class="row-f row-space">
                                         <div class="col-2-f">
                                             <div class="input-group-f">
@@ -92,11 +92,11 @@
                                             <div class="input-group-f">
                                                 <div class="p-t-10">
                                                     <label class="radio-container m-r-45">Receita
-                                                        <input type="radio" name="escolha" value="Receita">
+                                                        <input type="radio" name="escolha" value="receita">
                                                         <span class="checkmark"></span>
                                                     </label>
                                                     <label class="radio-container">Despesa
-                                                        <input type="radio" name="escolha" value="Despesa">
+                                                        <input type="radio" name="escolha" value="despesa">
                                                         <span class="checkmark"></span>
                                                     </label>
                                                 </div>
@@ -142,7 +142,7 @@
                                         </div>
                                     </div>
                                     <div class="p-t-15">
-                                        <button class="btn--f btn--radius-2 btn--blue" type="submit" name="submit">Adicionar</button>
+                                        <button class="btn--f btn--radius-2 btn--blue" type="submit" name="Submit">Adicionar</button>
                                     </div>
                                 </form>
                             </div>
