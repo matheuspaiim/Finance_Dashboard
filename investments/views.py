@@ -5,6 +5,16 @@ from .forms import RegistryForm
 
 
 # Create your views here.
+def investments(request):
+    return render(request, 'investments/investments.html')
+
+
+def tables(request):
+    return render(request, 'investments/tables.html')
+
+
+def charts(request):
+    return render(request, 'investments/charts.html')
 
 
 def createRegistry(request):
