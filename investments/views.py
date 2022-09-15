@@ -10,11 +10,21 @@ def investments(request):
 
 
 def tables(request):
-    return render(request, 'investments/tables.html')
+    listing = Registry.objects.all()
+
+    context = {'listing': listing}
+    return render(request, 'investments/tables.html', context)
 
 
 def charts(request):
     return render(request, 'investments/charts.html')
+
+
+def registry(request, pk_test):
+    registry = Registry.objects.get(id=pk_test)
+
+    context = {'registry': registry}
+    return render(request, 'accounts/customer.html', context)
 
 
 def createRegistry(request):
@@ -31,11 +41,11 @@ def createRegistry(request):
 
 
 def updateRegistry(request, pk):
-    registry = Registry.objects.get(id=pk)
-    form = RegistryForm(instance=registry)
+    registries = Registry.objects.get(id=pk)
+    form = RegistryForm(instance=registries)
 
     if request.method == 'POST':
-        form = RegistryForm(request.POST, instance=registry)
+        form = RegistryForm(request.POST, instance=registries)
         if form.is_valid():
             form.save()
             return redirect('/')
@@ -45,10 +55,10 @@ def updateRegistry(request, pk):
 
 
 def deleteRegistry(request, pk):
-    registry = Registry.objects.get(id=pk)
+    registries = Registry.objects.get(id=pk)
     if request.method == "POST":
-        registry.delete()
+        registries.delete()
         return redirect('/')
 
-    context = {'item': registry}
+    context = {'item': registries}
     return render(request, 'investments/delete.html', context)

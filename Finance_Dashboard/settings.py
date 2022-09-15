@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['personalfinance-dashboard.herokuapp.com', '127.0.0.1']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -72,7 +71,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Finance_Dashboard.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
@@ -80,13 +78,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'finance_dashboard',
-        'HOST': '127.0.0.1',
+        'HOST': 'localhost',
         'PORT': '3306',
         'USER': 'root',
         'PASSWORD': '',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -106,7 +103,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -117,7 +113,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -131,11 +126,12 @@ STATICFILES_DIRS = [
 
 if os.getcwd() == '/app':
     import dj_database_url
+
     db_from_env = dj_database_url.config(conn_max_age=500)
     DATABASES['default'].update(db_from_env)
-    #Honor the 'X-forwarded-photo' header for request.is_secure().
+    # Honor the 'X-forwarded-photo' header for request.is_secure().
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FOWARDED_PHOTO', 'https')
-    #Allow all host headers
+    # Allow all host headers
     ALLOWED_HOSTS = ['personalfinance-dashboard.herokuapp.com']
     DEBUG = True
 

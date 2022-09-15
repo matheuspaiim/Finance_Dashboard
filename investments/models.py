@@ -23,11 +23,11 @@ class Registry(models.Model):
         ('Renda', 'Renda'),
         ('Outro', 'Outro')
     )
-    descricao = models.CharField(max_length=255)
-    selecao = models.CharField(max_length=30)
+    descricao = models.CharField(max_length=255, null=True)
+    selecao = models.CharField(max_length=30, null=True)
     escolha = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
     data_entrada = models.DateTimeField(auto_now_add=True, null=True)
-    quantia = models.FloatField
+    quantia = models.FloatField()
     categoria = models.CharField(max_length=200, null=True, choices=CATEGORY)
 
     def __str__(self):
