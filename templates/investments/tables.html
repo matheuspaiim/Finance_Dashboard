@@ -82,14 +82,19 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {% for registry in listing %}
+                                {% for dbs in db %}
                                     <tr>
-                                        <td>{{ registry.escolha }}</td>
-                                        <td>{{ registry.descricao }}</td>
-                                        <td>{{ registry.categoria }}</td>
-                                        <td>{{ registry.quantia }}</td>
-                                        <td>{{ registry.data_entrada }}</td>
+                                        <td>{{ dbs.escolha }}</td>
+                                        <td>{{ dbs.descricao }}</td>
+                                        <td>{{ dbs.categoria }}</td>
+                                        <td>{{ dbs.quantia }}</td>
+                                        <td>{{ dbs.data_entrada }}</td>
                                     </tr>
+                                    <td>
+                                        <a href="/view/{{ dbs.id }}/" class="btn btn-dark">Visualizar</a>
+                                        <a href="" class="btn btn-primary">Editar</a>
+                                        <a href="" class="btn btn-danger">Deletar</a>
+                                    </td>
                                 {% endfor %}
                                 </tbody>
                             </table>

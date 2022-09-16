@@ -1,6 +1,6 @@
 from django.db import models
 from django import forms
-
+from django.utils import timezone
 
 # Create your models here.
 
@@ -26,7 +26,7 @@ class Registry(models.Model):
     descricao = models.CharField(max_length=255, null=True)
     selecao = models.CharField(max_length=30, null=True)
     escolha = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
-    data_entrada = models.DateTimeField(auto_now_add=True, null=True)
+    data_entrada = models.DateTimeField(default=timezone.now, null=True)
     quantia = models.FloatField()
     categoria = models.CharField(max_length=200, null=True, choices=CATEGORY)
 

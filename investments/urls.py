@@ -1,12 +1,14 @@
 from django.urls import path
-
-from . import views
+from django.views.generic import TemplateView
+from investments.views import home, form, create, view
 
 urlpatterns = [
-    path('investments/', views.investments),
-    path('tables/', views.tables),
-    path('charts/', views.charts),
-    path('create_registry/', views.createRegistry, name="create_registry"),
-    path('update_registry/<str:pk>/', views.updateRegistry, name="update_registry"),
-    path('delete_registry/<str:pk>/', views.deleteRegistry, name="delete_registry"),
+    path('', home, name='home'),
+    path('form/', form, name='form'),
+    path('create/', create, name='create'),
+    path('view/<int:pk>/', view, name='view'),
+    path('charts.html', TemplateView.as_view(template_name='investments/charts.html')),
+    path('form.html', TemplateView.as_view(template_name='investments/form.html')),
+    path('tables.html', TemplateView.as_view(template_name='investments/tables.html')),
+    path('investments.html', TemplateView.as_view(template_name='investments/investments.html')),
 ]
