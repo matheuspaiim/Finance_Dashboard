@@ -24,7 +24,7 @@ def create(request):
         form = RegistryForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('website/index.html')
+            return redirect('home')
 
     context = {'form': form}
     return render(request, 'investments/form.html', context)
