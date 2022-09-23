@@ -14,11 +14,11 @@
     <!-- Title Page-->
     <title>Adicionar Registro</title>
     <link rel="icon" href="/static/img/income.png">
-        <!-- Custom fonts for this template-->
+    <!-- Custom fonts for this template-->
     <link href="{% static 'fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
     <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
@@ -27,7 +27,8 @@
     <link href="{% static 'vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
     <link href="{% static 'vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
     <!-- Font special for pages-->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
 
     <!-- Vendor CSS-->
     <link href="{% static 'vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
@@ -39,151 +40,158 @@
 
 <body id="page-top">
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+<!-- Page Wrapper -->
+<div id="wrapper">
 
     {% include "website/sidebar.html" %}
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
 
-            <!-- Main Content -->
-            <div id="content" class="gradient-animation">
+        <!-- Main Content -->
+        <div id="content" class="gradient-animation">
 
-              {%  include "website/topbar.html" %}
+            {% include "website/topbar.html" %}
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-                    <ul class="circles">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                    </ul>
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800"></h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-light shadow-w index"><i
-                                class="fas fa-download fa-sm "></i> Gerar relatório</a>
-                    </div>
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+                <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800"></h1>
+                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-light shadow-w index"><i
+                            class="fas fa-download fa-sm "></i> Gerar relatório</a>
+                </div>
 
-                    <div class="wrapper-f wrapper--w480">
+                <div class="wrapper-f wrapper--w480">
 
-                        <!-- Form -->
-                        <div class="card-f card-4 row">
-                            <div class="card-body index">
-                                <h2 class="title">Novo Registro</h2>
-                                <form id="form" name="form" action="/create/" method=['POST']>{% csrf_token %}
-                                    <div class="row-f row-space">
-                                        <div class="col-2-f">
-                                            <div class="input-group-f">
-                                                <label class="label">Descrição</label>
-                                                <input class="input--style-4" type="text" name="descricao">
-                                            </div>
+                    <!-- Form -->
+                    <div class="card-f card-4 row">
+                        <div class="card-body index">
+                            <h2 class="title">Novo Registro</h2>
+                            <form id="form" name="form" action="/create/" method=['post']>
+                                {% csrf_token %}
+                                <div class="row-f row-space">
+                                    <div class="col-2-f">
+                                        <div class="input-group-f">
+                                            Descrição: {{ form.descricao }}
+                                            <input class="input--style-4" type="text" name="descricao">
                                         </div>
                                     </div>
-                                        <div class="col-2-f">
-                                            <div class="input-group-f">
-                                                <div class="p-t-10">
-                                                    <label class="radio-container m-r-45">Receita
-                                                        <input type="radio" name="escolha" value="receita">
-                                                        <span class="checkmark"></span>
-                                                    </label>
-                                                    <label class="radio-container">Despesa
-                                                        <input type="radio" name="escolha" value="despesa">
-                                                        <span class="checkmark"></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <div class="row-f row-space">
-                                        <div class="col-2-f">
-                                            <div class="input-group-f">
-                                                <label class="label">Data</label>
-                                                <div class="input-group-icon">
-                                                    <input class="input--style-4 js-datepicker" type="text" name="data_entrada">
-                                                    <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row-f row-space">
-                                        <div class="col-2-f">
-                                            <div class="input-group-f">
-                                                <label class="label">Quantia</label>
-                                                <input class="input--style-4" type="number" step="0.01" name="quantia" min="0.01">
-                                            </div>
-                                        </div>
-                                    </div>
+                                </div>
+                                <div class="col-2-f">
                                     <div class="input-group-f">
-                                        <label class="label">Categoria</label>
-                                        <div class="rs-select2 js-select-simple select--no-search">
-                                            <select name="categoria">
-                                                <option disabled="disabled" selected="selected">Selecionar</option>
-                                                <option>Comida e Bebida</option>
-                                                <option>Compras</option>
-                                                <option>Habilitação</option>
-                                                <option>Transporte</option>
-                                                <option>Veículo</option>
-                                                <option>Vida e Entretenimento</option>
-                                                <option>Comunicação, PC</option>
-                                                <option>Despesas Financeiras</option>
-                                                <option>Investimentos</option>
-                                                <option>Renda</option>
-                                                <option>Outro</option>
-                                            </select>
-                                            <div class="select-dropdown"></div>
+                                        <div class="p-t-10">
+                                            <label class="radio-container m-r-45">Receita
+                                                {{ form.receita }}
+                                                <input type="radio" name="escolha" value="receita">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label class="radio-container">Despesa
+                                                {{ form.despesa }}
+                                                <input type="radio" name="escolha" value="despesa">
+                                                <span class="checkmark"></span>
+                                            </label>
                                         </div>
                                     </div>
-                                    <div class="p-t-15">
-                                        <button class="btn--f btn--radius-2 btn--blue" type="submit" name="Submit">Adicionar</button>
+                                </div>
+                                <div class="row-f row-space">
+                                    <div class="col-2-f">
+                                        <div class="input-group-f">
+                                            Data: {{ form.data_entrada }}
+                                            <div class="input-group-icon">
+                                                <input class="input--style-4 js-datepicker" type="text"
+                                                       name="data_entrada">
+                                                <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                            </div>
+                                        </div>
                                     </div>
-                                </form>
-                            </div>
-                        <!-- End of Form -->
+                                </div>
+                                <div class="row-f row-space">
+                                    <div class="col-2-f">
+                                        <div class="input-group-f">
+                                            Quantia: {{ form.quantia }}
+                                            <input class="input--style-4" type="number" step="0.01" name="quantia"
+                                                   min="0.01">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group-f">
+                                    Categoria: {{ form.categoria }}
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="categoria">
+                                            <option disabled="disabled" selected="selected">Selecionar</option>
+                                            <option>Comida e Bebida</option>
+                                            <option>Compras</option>
+                                            <option>Habilitação</option>
+                                            <option>Transporte</option>
+                                            <option>Veículo</option>
+                                            <option>Vida e Entretenimento</option>
+                                            <option>Comunicação, PC</option>
+                                            <option>Despesas Financeiras</option>
+                                            <option>Investimentos</option>
+                                            <option>Renda</option>
+                                            <option>Outro</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                                <div class="p-t-15">
+                                    <button class="btn--f btn--radius-2 btn--blue" type="submit" name="Submit">
+                                        Adicionar
+                                    </button>
+                                </div>
+                            </form>
                         </div>
+                        <!-- End of Form -->
                     </div>
                 </div>
-                <!-- Footer -->
-                <footer class="sticky-footer shadow-f-2 bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>2022 © Personal Finance Dashboard, Matheus Paim. Todos os direitos reservados.</span>
-                        </div>
-                    </div>
-                </footer>
-            <!-- End of Footer -->
             </div>
-        <!-- End of Content Wrapper -->
+            <!-- Footer -->
+            <footer class="sticky-footer shadow-f-2 bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>2022 © Personal Finance Dashboard, Matheus Paim. Todos os direitos reservados.</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
         </div>
-    <!-- End of Page Wrapper -->
+        <!-- End of Content Wrapper -->
     </div>
+    <!-- End of Page Wrapper -->
+</div>
 
-    <!-- Jquery JS-->
-    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-    <!-- Vendor JS-->
-    <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
-    <script src="{% static 'vendor/datepicker/moment.min.js' %}"></script>
-    <script src="{% static 'vendor/datepicker/daterangepicker.js' %}"></script>
+<!-- Jquery JS-->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<!-- Vendor JS-->
+<script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+<script src="{% static 'vendor/datepicker/moment.min.js' %}"></script>
+<script src="{% static 'vendor/datepicker/daterangepicker.js' %}"></script>
 
-    <!-- Main JS-->
-    <script src="{% static 'js/global.js' %}"></script>
+<!-- Main JS-->
+<script src="{% static 'js/global.js' %}"></script>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="{% static 'jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- Bootstrap core JavaScript-->
+<script src="{% static 'jquery/jquery.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="{% static 'jquery-easing/jquery.easing.min.js' %}"></script>
+<!-- Core plugin JavaScript-->
+<script src="{% static 'jquery-easing/jquery.easing.min.js' %}"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
+<!-- Custom scripts for all pages-->
+<script src="{% static 'js/sb-admin-2.min.js' %}"></script>
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 

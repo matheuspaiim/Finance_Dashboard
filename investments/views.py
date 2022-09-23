@@ -27,12 +27,12 @@ def create(request):
             return redirect('home')
 
     context = {'form': form}
-    return render(request, 'investments/form.html', context)
+    return render(request, 'investments/tables.html', context)
 
 
 def view(request, pk):
     data = {}
-    data['db'] = Registry.objects.get(pk=pk)
+    data['finance_dashboard'] = Registry.objects.get(pk=pk)
     return render(request, 'investments/tables.html', data)
 
 

@@ -82,13 +82,13 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {% for dbs in db %}
+                                {% for dbs in finance_dashboard %}
                                     <tr>
-                                        <td>{{ dbs.escolha }}</td>
                                         <td>{{ dbs.descricao }}</td>
-                                        <td>{{ dbs.categoria }}</td>
-                                        <td>{{ dbs.quantia }}</td>
+                                        <td>{{ dbs.escolha }}</td>
                                         <td>{{ dbs.data_entrada }}</td>
+                                        <td>{{ dbs.quantia }}</td>
+                                        <td>{{ dbs.categoria }}</td>
                                     </tr>
                                     <td>
                                         <a href="/view/{{ dbs.id }}/" class="btn btn-dark">Visualizar</a>

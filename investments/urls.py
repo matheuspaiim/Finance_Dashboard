@@ -11,4 +11,8 @@ urlpatterns = [
     path('form.html', TemplateView.as_view(template_name='investments/form.html')),
     path('tables.html', TemplateView.as_view(template_name='investments/tables.html')),
     path('investments.html', TemplateView.as_view(template_name='investments/investments.html')),
+    path('create/charts.html', TemplateView.as_view(template_name='investments/charts.html')),
+    path('create/form.html', TemplateView.as_view(template_name='investments/form.html')),
+    path('create/tables.html', TemplateView.as_view(template_name='investments/tables.html')),
+    path('create/investments.html', TemplateView.as_view(template_name='investments/investments.html')),
 ]

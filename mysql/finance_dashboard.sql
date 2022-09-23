@@ -5,9 +5,7 @@ USE finance_dashboard;
 CREATE TABLE registro (
 	id INT NOT NULL AUTO_INCREMENT,
     descricao VARCHAR(255),
-    selecao VARCHAR(30),
-    receita VARCHAR(20),
-    despesa VARCHAR(20),
+    escolha VARCHAR(30),
     data_entrada DATE NOT NULL,
     quantia FLOAT(10,2) NOT NULL,
     PRIMARY KEY(id)

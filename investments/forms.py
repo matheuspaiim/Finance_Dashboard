@@ -5,4 +5,4 @@ from .models import Registry
 class RegistryForm(ModelForm):
     class Meta:
         model = Registry
-        fields = ['descricao', 'selecao', 'data_entrada', 'quantia', 'categoria']
+        fields = ['descricao', 'escolha', 'data_entrada', 'quantia', 'categoria']

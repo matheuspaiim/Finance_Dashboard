@@ -24,11 +24,8 @@ class Registry(models.Model):
         ('Outro', 'Outro')
     )
     descricao = models.CharField(max_length=255, null=True)
-    selecao = models.CharField(max_length=30, null=True)
-    escolha = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
+    escolha = models.CharField(max_length=50, null=True, choices=CHOICES)
     data_entrada = models.DateTimeField(default=timezone.now, null=True)
     quantia = models.FloatField()
     categoria = models.CharField(max_length=200, null=True, choices=CATEGORY)
 
-    def __str__(self):
-        return self.selecao
