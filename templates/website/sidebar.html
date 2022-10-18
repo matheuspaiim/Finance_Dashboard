@@ -2,7 +2,7 @@
         <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion index" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'index' %}">
                 <div class="bar-chart-3">
                     <img class="img-fluid" src="/static/img/dashboard.png">
                 </div>
@@ -14,7 +14,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{% url 'index' %}">
                     <img class="img-fluid " style="width: 1.5rem;"
                                              src="/static/img/data-analytics.png" alt="...">
                     <span>Painel</span>
@@ -40,12 +40,12 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Dashboards:</h6>
-                        <a class="collapse-item" href="charts.html">Visão Geral do Ano</a>
-                        <a class="collapse-item" href="investments.html">Investimentos</a>
+                        <a class="collapse-item" href="{% url 'charts' %}">Visão Geral do Ano</a>
+                        <a class="collapse-item" href="{% url 'investments' %}">Investimentos</a>
                         <h6 class="collapse-header">Atualizar registros:</h6>
-                        <a class="collapse-item" href="form.html">Adicionar Registro</a>
+                        <a class="collapse-item" href="{% url 'registration' %}">Adicionar Registro</a>
                         <h6 class="collapse-header">Ver registros:</h6>
-                        <a class="collapse-item" href="tables.html">Listar Registros</a>
+                        <a class="collapse-item" href="{% url 'tables' %}">Listar Registros</a>
 
                     </div>
                 </div>
@@ -70,8 +70,8 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Página de login:</h6>
-                        <a class="collapse-item" href="login.html">Entrar</a>
-                        <a class="collapse-item" href="register.html">Cadastrar-se</a>
+                        <a class="collapse-item" href="{% url 'login' %}">Entrar</a>
+                        <a class="collapse-item" href="{% url 'register_login' %}">Cadastrar-se</a>
                         <div class="collapse-divider"></div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{% url 'charts' %}">
                     <img class="img-fluid " style="width: 1.5rem;"
                                              src="/static/img/presentation.png" alt="...">
                     <span>Gráficos</span></a>
@@ -87,7 +87,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="{% url 'tables' %}">
                     <img class="img-fluid " style="width: 1.5rem;"
                                              src="/static/img/annual-report.png" alt="...">
                     <span>Tabelas</span></a>

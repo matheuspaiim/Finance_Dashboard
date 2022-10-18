@@ -1,6 +1,6 @@
 from django.db import models
-from django import forms
 from django.utils import timezone
+
 
 # Create your models here.
 
@@ -23,9 +23,15 @@ class Registry(models.Model):
         ('Renda', 'Renda'),
         ('Outro', 'Outro')
     )
-    descricao = models.CharField(max_length=255, null=True)
+    descricao = models.CharField(max_length=275, null=True)
     escolha = models.CharField(max_length=50, null=True, choices=CHOICES)
     data_entrada = models.DateTimeField(default=timezone.now, null=True)
     quantia = models.FloatField()
     categoria = models.CharField(max_length=200, null=True, choices=CATEGORY)
 
+
+class Login(models.Model):
+    nome = models.CharField(max_length=100, null=True)
+    sobrenome = models.CharField(max_length=100, null=True)
+    email = models.CharField(max_length=200, null=True)
+    senha = models.CharField(max_length=30, null=True)

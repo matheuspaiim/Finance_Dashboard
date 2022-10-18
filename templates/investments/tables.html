@@ -82,19 +82,14 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {% for dbs in finance_dashboard %}
+                                {% for reg in registry %}
                                     <tr>
-                                        <td>{{ dbs.descricao }}</td>
-                                        <td>{{ dbs.escolha }}</td>
-                                        <td>{{ dbs.data_entrada }}</td>
-                                        <td>{{ dbs.quantia }}</td>
-                                        <td>{{ dbs.categoria }}</td>
+                                        <td>{{ reg.descricao }}</td>
+                                        <td>{{ reg.escolha }}</td>
+                                        <td>{{ reg.data_entrada }}</td>
+                                        <td>{{ reg.quantia }}</td>
+                                        <td>{{ reg.categoria }}</td>
                                     </tr>
-                                    <td>
-                                        <a href="/view/{{ dbs.id }}/" class="btn btn-dark">Visualizar</a>
-                                        <a href="" class="btn btn-primary">Editar</a>
-                                        <a href="" class="btn btn-danger">Deletar</a>
-                                    </td>
                                 {% endfor %}
                                 </tbody>
                             </table>
@@ -142,7 +137,7 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <a class="btn btn-primary" href="{% url 'login' %}">Logout</a>
             </div>
         </div>
     </div>

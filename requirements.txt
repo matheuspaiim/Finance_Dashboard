@@ -8,7 +8,6 @@ django-htmlmin==0.11.0
 filelock==3.8.0
 html5lib==1.1
 mysql-connector-python==8.0.30
-mysqlclient @ file:///C:/Python310/mysqlclient-1.4.6-cp39-cp39-win_amd64.whl
 platformdirs==2.5.2
 protobuf==3.20.1
 PyMySQL==1.0.2
