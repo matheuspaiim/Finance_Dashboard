@@ -1,22 +1,6 @@
 from django.forms import ModelForm
-from .models import Registry, Login
+from .models import Login
 from django import forms
-
-
-class RegistryForm(ModelForm):
-    class Meta:
-        model = Registry
-        fields = ['descricao', 'escolha', 'data_entrada', 'quantia', 'categoria']
-
-        exclude = ()
-
-        widgets = {
-            'descricao': forms.TextInput(attrs={'class': 'input--style-4', 'autofocus': ''}),
-            'escolha': forms.RadioSelect(attrs={'class': 'input--style-4'}),
-            'data_entrada': forms.DateInput(attrs={'class': 'input--style-4'}),
-            'quantia': forms.NumberInput(attrs={'class': 'input--style-4'}),
-            'categoria': forms.Select(attrs={'class': 'input--style-4'}),
-        }
 
 
 class LoginForm(ModelForm):
@@ -25,8 +9,11 @@ class LoginForm(ModelForm):
         exclude = ()
 
         widgets = {
-            'nome': forms.TextInput(attrs={'class': 'form-control form-control-user', 'autofocus': ''}),
-            'sobrenome': forms.TextInput(attrs={'class': 'form-control form-control-user'}),
-            'email': forms.TextInput(attrs={'class': 'form-control form-control-user'}),
-            'senha': forms.TextInput(attrs={'class': 'form-control form-control-user'}),
+            'nome': forms.TextInput(
+                attrs={'class': 'form-control form-control-user', 'placeholder': 'Nome', 'autofocus': ''}),
+            'sobrenome': forms.TextInput(attrs={'class': 'form-control form-control-user', 'placeholder': 'Sobrenome'}),
+            'email': forms.TextInput(attrs={'class': 'form-control form-control-user', 'placeholder': 'Email'}),
+            'senha': forms.TextInput(attrs={'class': 'form-control form-control-user', 'placeholder': 'Senha'}),
+            'repetir_senha': forms.TextInput(
+                attrs={'class': 'form-control form-control-user', 'placeholder': 'Repetir Senha'}),
         }

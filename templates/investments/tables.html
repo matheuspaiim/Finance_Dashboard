@@ -74,21 +74,29 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th>Tipo</th>
                                     <th>Descrição</th>
-                                    <th>Categoria</th>
-                                    <th>Quantia</th>
+                                    <th>Escolha</th>
                                     <th>Data de entrada</th>
+                                    <th>Quantia</th>
+                                    <th>Categoria</th>
+                                    <th>Editar</th>
+                                    <th>Deletar</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {% for reg in registry %}
+                                {% for registries in registry %}
                                     <tr>
-                                        <td>{{ reg.descricao }}</td>
-                                        <td>{{ reg.escolha }}</td>
-                                        <td>{{ reg.data_entrada }}</td>
-                                        <td>{{ reg.quantia }}</td>
-                                        <td>{{ reg.categoria }}</td>
+                                        <td>{{ registries.descricao }}</td>
+                                        <td>{{ registries.escolha }}</td>
+                                        <td>{{ registries.data_entrada }}</td>
+                                        <td>{{ registries.quantia }}</td>
+                                        <td>{{ registries.categoria }}</td>
+                                        <td><a href="{% url 'edit' registries.id %}" class="btn btn-primary"
+                                               data-title="Edit" data-toggle="modal">Editar
+                                        </a></td>
+                                        <td><a href="/delete/{{ registries.id }}" class="btn btn-danger"
+                                               data-title="Delete" data-toggle="modal">Deletar
+                                        </a></td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>

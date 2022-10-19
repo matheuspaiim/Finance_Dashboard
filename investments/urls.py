@@ -14,7 +14,7 @@ urlpatterns = [
 
     path('register_login/', views.register_login, name='register_login'),
     path('registration/', views.registration, name='registration'),
-    path('edit/<int:register_pk>/edit', views.edit, name='edit'),
-    path('delete/<int:register_pk>', views.destroy, name='delete'),
+    path('edit/<int:id>', views.edit, name='edit'),
+    path('delete/<str:register_id>', views.delete, name='delete'),
 
 ]

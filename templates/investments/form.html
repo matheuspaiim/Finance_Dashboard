@@ -86,12 +86,13 @@
                             <form id="form" name="form" action="{% url 'registration' %}" class="d-grid" method="POST">
 
                                 {% csrf_token %}
-
+                                {% block Id %}{% endblock Id %}
                                 <div class="row-f row-space">
                                     <div class="col-2-f">
                                         <div class="input-group-f">
                                             Descrição:
-                                            {{ form.descricao }}
+                                            <input class="input--style-4" type="text" name="descricao" required
+                                                    {% block Descricao %}{% endblock Descricao %}>
                                         </div>
                                     </div>
                                 </div>
@@ -100,10 +101,19 @@
                                     <div class="input-group-f">
                                         <div class="p-t-10">
                                             <label class="radio-container m-r-45">Receita
-                                                {{ form.escolha }}
+
+                                                <input type="radio" name="escolha"
+                                                       required {% if Registry.escolha == 'Receita' %}
+                                                       check {% else %}
+                                                    '' {% endif %}>
+                                                <span class="checkmark"></span>
                                             </label>
                                             <label class="radio-container">Despesa
-                                                {{ form.escolha }}
+
+                                                <input type="radio" name="escolha" required
+                                                        {% if Registry.escolha == 'Despesa' %} check {% else %}
+                                                            '' {% endif %}>
+                                                <span class="checkmark"></span>
                                             </label>
                                         </div>
                                     </div>
@@ -114,7 +124,9 @@
                                         <div class="input-group-f">
                                             Data:
                                             <div class="input-group-icon">
-                                                {{ form.data_entrada }}
+                                                <input class="input--style-4"
+                                                       name="data_entrada" type="date" required
+                                                        {% block Data_entrada %}{% endblock Data_entrada %}>
                                                 <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                             </div>
                                         </div>
@@ -125,7 +137,9 @@
                                     <div class="col-2-f">
                                         <div class="input-group-f">
                                             Quantia:
-                                            {{ form.quantia }}
+                                            <input class="input--style-4" placeholder="R$" type="number" step="0.01" name="quantia"
+                                                   required
+                                                    {% block Quantia %}{% endblock Quantia %}>
                                         </div>
                                     </div>
                                 </div>
@@ -133,10 +147,10 @@
                                 <div class="input-group-f">
                                     Categoria:
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="categoria">
-                                            <option disabled="disabled"
-                                                    selected="selected">Selecionar
-                                            </option>{{ form.categoria }}
+                                        <select name="categoria" required>
+                                            {% block Categoria %}
+                                                <option disabled="disabled" selected="selected">Selecionar</option>
+                                            {% endblock Categoria %}
                                             <option>Comida e Bebida</option>
                                             <option>Compras</option>
                                             <option>Habilitação</option>
@@ -154,9 +168,11 @@
                                 </div>
 
                                 <div class="p-t-15">
-                                    <button class="btn--f btn--radius-2 btn--blue" type="submit" name="Submit">
-                                        Adicionar
-                                    </button>
+                                    {% block button %}
+                                        <button class="btn--f btn--radius-2 btn--blue" type="submit" name="Submit">
+                                            Adicionar
+                                        </button>
+                                    {% endblock button %}
                                 </div>
                             </form>
 

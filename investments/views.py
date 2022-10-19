@@ -1,7 +1,8 @@
-from .models import Registry
+from django.http import HttpResponseRedirect
+from django.utils.dateparse import parse_datetime
 from django.shortcuts import render, redirect
 from .models import *
-from .forms import RegistryForm, LoginForm
+from .forms import LoginForm
 
 
 # Create your views here.
@@ -50,13 +51,22 @@ def investments(request):
 
 
 def registration(request):
-    form = RegistryForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        return redirect('tables')
-
-    context = {'form': form}
-    return render(request, 'investments/form.html', context)
+    if request.method == "POST":
+        if request.POST.get('descricao') and \
+                request.POST.get('escolha') and \
+                request.POST.get('data_entrada') and \
+                request.POST.get('quantia') or \
+                request.POST.get('categoria'):
+            registry = Registry()
+            registry.descricao = request.POST.get('descricao')
+            registry.escolha = request.POST.get('escolha')
+            registry.data_entrada = parse_datetime(request.POST.get('data_entrada'))
+            registry.quantia = request.POST.get('quantia')
+            registry.categoria = request.POST.get('categoria')
+            registry.save()
+            return HttpResponseRedirect('/')
+    else:
+        return render(request, 'investments/form.html')
 
 
 def register_login(request):
@@ -69,19 +79,12 @@ def register_login(request):
     return render(request, 'accounts/register.html', context)
 
 
-def edit(request, registration_pk):
-    registry = Registry.objects.get(pk=registration_pk)
-
-    form = RegistryForm(request.POST or None, instance=registry)
-    if form.is_valid():
-        form.save()
-        return redirect("reports")
-
-    context = {'form': form}
-    return render(request, '/', context)
+def edit(request, id):
+    registry = Registry.objects.get(id=id)
+    return render(request, 'investments/', {"Registry": registry})
 
 
-def destroy(request, registration_pk):
-    material = Registry.objects.get(pk=registration_pk)
-    material.delete()
+def delete(request, registry_id):
+    registry = Registry.objects.get(id=registry_id)
+    registry.delete()
     return redirect("tables")
