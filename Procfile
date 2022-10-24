@@ -1,0 +1,1 @@
+                                                     web: gunicorn Finance_Dashboard.wsgi --log-file -
