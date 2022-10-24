@@ -11,9 +11,6 @@ Você pode abrir diretamente o projeto no Heruko [nesse link](https://personalfi
 * [JavaScript](https://www.javascript.com)
 * [HTML](https://www.w3schools.com/html/)
 * [CSS](https://www.w3schools.com/css/)
-* [SCSS](https://sass-lang.com)
-* [Less](https://lesscss.org)
-
 
 ## Como rodar o projeto e fazer alterações:
 
