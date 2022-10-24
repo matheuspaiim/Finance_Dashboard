@@ -2,7 +2,7 @@
 
 ### Jogo da velha em python utilizando programação orientada a objetos.
 
-Você pode abrir diretamente o projeto no Heruko [nesse link](https://personalfinance-dashboard.herokuapp.com)
+Você pode abrir diretamente o projeto no Heroku [nesse link](https://personalfinance-dashboard.herokuapp.com)
 
 ## Tecnologias utilizadas:
 
