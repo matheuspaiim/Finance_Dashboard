@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Login
+from .models import Login, Investments
 from django import forms
 
 

@@ -4,180 +4,258 @@
 <html lang="en">
 
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
 
-    <title>Investimentos</title>
-    <link rel="icon" href="/static/img/investment.png">
+    <!-- Title Page-->
+    <title>Adicionar Registro</title>
+    <link rel="icon" href="/static/img/income.png">
     <!-- Custom fonts for this template-->
     <link href="{% static 'fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
     <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
+
+    <!-- Icons font CSS-->
+    <link href="{% static 'vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{% static 'vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/datepicker/daterangepicker.css' %}" rel="stylesheet" media="all">
+
     <!-- Secondary CSS-->
     <link href="{% static 'vendor/css/main.css' %}" rel="stylesheet" type="text/css">
 </head>
 
 <body id="page-top">
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+<!-- Page Wrapper -->
+<div id="wrapper">
 
-        {% include "website/sidebar.html" %}
+    {% include "website/sidebar.html" %}
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
 
-            <!-- Main Content -->
-            <div id="content" class="bg-gradient-dark">
+        <!-- Main Content -->
+        <div id="content" class="gradient-animation">
 
-            {%  include "website/topbar.html" %}
+            {% include "website/topbar.html" %}
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-                    <ul class="circles index-0">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                    </ul>
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-white">Investimentos</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-light shadow-w index"><i
-                                class="fas fa-download fa-sm "></i> Gerar relatório</a>
-                    </div>
-
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <div class="col-xl-8 col-lg-7">
-
-                            <!-- Area Chart -->
-                            <div class="card shadow-w mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
-                                    </div>
-                                    <hr>
-
-                                </div>
-                            </div>
-
-                            <!-- Bar Chart -->
-                            <div class="card shadow-w mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart-bar">
-                                        <canvas id="myBarChart"></canvas>
-                                    </div>
-                                    <hr>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Donut Chart -->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow-w mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Donut Chart</h6>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-pie pt-4">
-                                        <canvas id="myPieChart"></canvas>
-                                    </div>
-                                    <hr>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+                <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800"></h1>
+                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-light shadow-w index"><i
+                            class="fas fa-download fa-sm "></i> Gerar relatório</a>
                 </div>
-                <!-- /.container-fluid -->
 
-            </div>
-            <!-- End of Main Content -->
+                <div class="wrapper-f wrapper--w480">
 
-                <!-- Footer -->
-                <footer class="sticky-footer shadow-f-2">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>2022 © Personal Finance Dashboard, Matheus Paim. Todos os direitos reservados.</span>
+                    <!-- Form -->
+                    <div class="card-f card-4 row">
+
+                        <div class="card-body index">
+
+                            <h2 class="title">Adicionar Investimento</h2>
+
+                            <form id="form" name="form" action="{% url 'investments_add' %}" class="d-grid" method="POST">
+
+                                {% csrf_token %}
+                                {% block Id %}{% endblock Id %}
+
+                                <div class="input-group-f">
+                                    Tipo:
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="tipo" required>
+                                            {% block Tipo %}
+                                                <option disabled="disabled" selected="selected">Selecionar</option>
+                                            {% endblock Tipo %}
+                                            <option>Ações, BDR, ETFs, FIIs e Units</option>
+                                            <option>Fundos de Investimento</option>
+                                            <option>Investimentos no Exterior</option>
+                                            <option>CDB / LCI / LCA / LC / LF</option>
+                                            <option>CRI / CRA</option>
+                                            <option>Debêntures</option>
+                                            <option>Opções de Ações</option>
+                                            <option>Termos de Ações</option>
+                                            <option>Futuros</option>
+                                            <option>COE</option>
+                                            <option>Poupança</option>
+                                            <option>Moedas</option>
+                                            <option>Criptomoedas</option>
+                                            <option>Ativos Genéricos</option>
+                                            <option>Caixa</option>
+                                            <option>Commodities</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+
+                                <div class="row-f row-space">
+                                    <div class="col-2-f">
+                                        <div class="input-group-f">
+                                            Nome:
+                                            <input class="input--style-4" type="text" name="nome" required
+                                                    {% block Nome %}{% endblock Nome %}>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row-f row-space">
+                                    <div class="col-2-f">
+                                        <div class="input-group-f">
+                                            Taxa:
+                                            <input class="input--style-4" type="number" name="taxa" required
+                                                    {% block Taxa %}{% endblock Taxa %}>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row-f row-space">
+                                    <div class="col-2-f">
+                                        <div class="input-group-f">
+                                            Taxa Corretagem:
+                                            <input class="input--style-4" type="number" name="taxa_corretagem" required
+                                                    {% block Taxa_corretagem %}{% endblock Taxa_corretagem %}>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row-f row-space">
+                                    <div class="col-2-f">
+                                        <div class="input-group-f">
+                                            Data da compra:
+                                            <div class="input-group-icon">
+                                                <input class="input--style-4"
+                                                       name="data_compra" type="date" required
+                                                        {% block Data_compra %}{% endblock Data_compra %}>
+                                                <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row-f row-space">
+                                    <div class="col-2-f">
+                                        <div class="input-group-f">
+                                            Data do vencimento:
+                                            <div class="input-group-icon">
+                                                <input class="input--style-4"
+                                                       name="data_vencimento" type="date" required
+                                                        {% block Data_vencimento %}{% endblock Data_vencimento %}>
+                                                <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row-f row-space">
+                                    <div class="col-2-f">
+                                        <div class="input-group-f">
+                                            Banco:
+                                            <input class="input--style-4" type="text" name="banco" required
+                                                    {% block Banco %}{% endblock Banco %}>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row-f row-space">
+                                    <div class="col-2-f">
+                                        <div class="input-group-f">
+                                            Corretora:
+                                            <input class="input--style-4" type="text" name="corretora" required
+                                                    {% block Corretora %}{% endblock Corretora %}>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row-f row-space">
+                                    <div class="col-2-f">
+                                        <div class="input-group-f">
+                                            Quantidade:
+                                            <input class="input--style-4" placeholder="" type="number" step="0.01"
+                                                   name="quantidade"
+                                                   required
+                                                    {% block Quantidade %}{% endblock Quantidade %}>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-t-15">
+                                    {% block button %}
+                                        <button class="btn--f btn--radius-2 btn--blue" type="submit" name="Submit">
+                                            Adicionar
+                                        </button>
+                                    {% endblock button %}
+                                </div>
+                            </form>
+
                         </div>
+                        <!-- End of Form -->
                     </div>
-                </footer>
+                </div>
+            </div>
+            <!-- Footer -->
+            <footer class="sticky-footer shadow-f-2 bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>2022 © Personal Finance Dashboard, Matheus Paim. Todos os direitos reservados.</span>
+                    </div>
+                </div>
+            </footer>
             <!-- End of Footer -->
-
         </div>
         <!-- End of Content Wrapper -->
-
     </div>
     <!-- End of Page Wrapper -->
+</div>
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+<!-- Jquery JS-->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<!-- Vendor JS-->
+<script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+<script src="{% static 'vendor/datepicker/moment.min.js' %}"></script>
+<script src="{% static 'vendor/datepicker/daterangepicker.js' %}"></script>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Seleciona "Sair" abaixo se você já está pronto pra terminar a sua sessão atual.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-primary" href="{% url 'login' %}">Sair</a>
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- Main JS-->
+<script src="{% static 'js/global.js' %}"></script>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="{% static 'jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- Bootstrap core JavaScript-->
+<script src="{% static 'jquery/jquery.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="{% static 'jquery-easing/jquery.easing.min.js' %}"></script>
+<!-- Core plugin JavaScript-->
+<script src="{% static 'jquery-easing/jquery.easing.min.js' %}"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
+<!-- Custom scripts for all pages-->
+<script src="{% static 'js/sb-admin-2.min.js' %}"></script>
 
-    <!-- Page level plugins -->
-    <script src="{% static 'chart.js/Chart.min.js' %}"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="{% static 'js/demo/chart-area-demo.js' %}"></script>
-    <script src="{% static 'js/demo/chart-pie-demo.js' %}"></script>
-    <script src="{% static 'js/demo/chart-bar-demo.js' %}"></script>
-
-</body>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>
+<!-- end document-->

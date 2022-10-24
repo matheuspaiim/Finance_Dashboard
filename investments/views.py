@@ -42,12 +42,39 @@ def tables(request):
 
 
 def investments(request):
-    registry = Registry.objects.all()
+    investment = Investments.objects.all()
 
     context = {
-        'registry': registry
+        'investment': investment
     }
-    return render(request, 'investments/investments.html', context)
+    return render(request, 'investments/investments_table.html', context)
+
+
+def investments_add(request):
+    if request.method == "POST":
+        if request.POST.get('tipo') and \
+                request.POST.get('nome') and \
+                request.POST.get('taxa') and \
+                request.POST.get('taxa_corretagem') and \
+                request.POST.get('data_compra') and \
+                request.POST.get('data_vencimento') and \
+                request.POST.get('banco') and \
+                request.POST.get('corretora') and \
+                request.POST.get('quantidade'):
+            investment = Investments()
+            investment.tipo = request.POST.get('tipo')
+            investment.nome = request.POST.get('nome')
+            investment.taxa = parse_datetime(request.POST.get('taxa'))
+            investment.taxa_corretagem = request.POST.get('taxa_corretagem')
+            investment.data_compra = request.POST.get('data_compra')
+            investment.data_vencimento = request.POST.get('data_vencimento')
+            investment.banco = request.POST.get('banco')
+            investment.corretora = request.POST.get('corretora')
+            investment.quantidade = request.POST.get('quantidade')
+            investment.save()
+            return HttpResponseRedirect('/')
+    else:
+        return render(request, 'investments/investments.html')
 
 
 def registration(request):
@@ -80,11 +107,11 @@ def register_login(request):
 
 
 def edit(request, id):
-    registry = Registry.objects.get(id=id)
-    return render(request, 'investments/', {"Registry": registry})
+    tables = Registry.objects.get(id=id)
+    return render(request, 'investments/', {"Registry": tables})
 
 
-def delete(request, registry_id):
-    registry = Registry.objects.get(id=registry_id)
-    registry.delete()
+def delete(request, registry_pk):
+    tables = Registry.objects.get(pk=registry_pk)
+    tables.delete()
     return redirect("tables")

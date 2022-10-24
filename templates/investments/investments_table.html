@@ -1,0 +1,57 @@
+{% extends 'website/base.html' %}
+{% block title %}Registros{% endblock %}
+
+{% block content %}
+
+    <link rel="icon" href="/static/img/annual-report.png">
+
+    <!-- DataTales Example -->
+    <div class="card shadow-w mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Exemplos de tabela</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Nome</th>
+                        <th>Taxa</th>
+                        <th>Taxa Corretagem</th>
+                        <th>Data da compra</th>
+                        <th>Data do vencimento</th>
+                        <th>Banco</th>
+                        <th>Corretora</th>
+                        <th>Quantidade</th>
+                        <th>Editar</th>
+                        <th>Deletar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for investments in investment %}
+                        <tr>
+                            <td>{{ investments.tipo }}</td>
+                            <td>{{ investments.nome }}</td>
+                            <td>{{ investments.taxa }}</td>
+                            <td>{{ investments.taxa_corretagem }}</td>
+                            <td>{{ investments.data_compra }}</td>
+                            <td>{{ investments.data_vencimento }}</td>
+                            <td>{{ investments.banco }}</td>
+                            <td>{{ investments.corretora }}</td>
+                            <td>{{ investments.quantidade }}</td>
+                            <td><a href="{% url 'edit' investments.id %}" class="btn btn-primary"
+                                   data-title="Edit" data-toggle="modal">Editar
+                            </a></td>
+                            <td><a href="/delete/{{ investments.id }}" class="btn btn-danger"
+                                   data-title="Delete" data-toggle="modal">Deletar
+                            </a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

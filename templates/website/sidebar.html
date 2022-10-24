@@ -1,105 +1,124 @@
 <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion index" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion index" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'index' %}">
-                <div class="bar-chart-3">
-                    <img class="img-fluid" src="/static/img/dashboard.png">
-                </div>
-                <div class="sidebar-brand-text shadow-t mx-3">Finance Dashboard</div>
-            </a>
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'index' %}">
+        <div class="bar-chart-3">
+            <img class="img-fluid" src="/static/img/dashboard.png">
+        </div>
+        <div class="sidebar-brand-text shadow-t mx-3">Finance Dashboard</div>
+    </a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'index' %}">
-                    <img class="img-fluid " style="width: 1.5rem;"
-                                             src="/static/img/data-analytics.png" alt="...">
-                    <span>Painel</span>
-                </a>
-            </li>
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+        <a class="nav-link" href="{% url 'index' %}">
+            <img class="img-fluid " style="width: 1.5rem;"
+                 src="/static/img/data-analytics.png" alt="...">
+            <span>Painel Principal</span>
+        </a>
+    </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
+    <!-- Divider -->
+    <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Interface
-            </div>
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Interface
+    </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <img class="img-fluid " style="width: 1.5rem;"
-                                             src="/static/img/salary.png" alt="...">
-                    <span>Gestor de Finanças</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Dashboards:</h6>
-                        <a class="collapse-item" href="{% url 'charts' %}">Visão Geral do Ano</a>
-                        <a class="collapse-item" href="{% url 'investments' %}">Investimentos</a>
-                        <h6 class="collapse-header">Atualizar registros:</h6>
-                        <a class="collapse-item" href="{% url 'registration' %}">Adicionar Registro</a>
-                        <h6 class="collapse-header">Ver registros:</h6>
-                        <a class="collapse-item" href="{% url 'tables' %}">Listar Registros</a>
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+           aria-expanded="true" aria-controls="collapseTwo">
+            <img class="img-fluid " style="width: 1.5rem;"
+                 src="/static/img/salary.png" alt="...">
+            <span>Gestor de Finanças</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Dashboards:</h6>
+                <a class="collapse-item" href="{% url 'charts' %}">Visão Geral do Ano</a>
 
-                    </div>
-                </div>
-            </li>
+                <h6 class="collapse-header">Atualizar registros:</h6>
+                <a class="collapse-item" href="{% url 'investments_add' %}">Investimento</a>
+                <a class="collapse-item" href="{% url 'registration' %}">Registro Gasto / Ganho</a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
+                <h6 class="collapse-header">Ver registros:</h6>
+                <a class="collapse-item" href="{% url 'tables' %}">Registros</a>
+                <a class="collapse-item" href="{% url 'tables' %}">Investimentos</a>
 
             </div>
+        </div>
+    </li>
 
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <img class="img-fluid " style="width: 1.5rem;"
-                                             src="/static/img/id-card.png" alt="...">
-                    <span>Login e Cadastro</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Página de login:</h6>
-                        <a class="collapse-item" href="{% url 'login' %}">Entrar</a>
-                        <a class="collapse-item" href="{% url 'register_login' %}">Cadastrar-se</a>
-                        <div class="collapse-divider"></div>
-                    </div>
-                </div>
-            </li>
+    <!-- Divider -->
+    <hr class="sidebar-divider">
 
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'charts' %}">
-                    <img class="img-fluid " style="width: 1.5rem;"
-                                             src="/static/img/presentation.png" alt="...">
-                    <span>Gráficos</span></a>
-            </li>
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Login
+    </div>
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'tables' %}">
-                    <img class="img-fluid " style="width: 1.5rem;"
-                                             src="/static/img/annual-report.png" alt="...">
-                    <span>Tabelas</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+           aria-expanded="true" aria-controls="collapsePages">
+            <img class="img-fluid " style="width: 1.5rem;"
+                 src="/static/img/id-card.png" alt="...">
+            <span>Login e Cadastro</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Página de login:</h6>
+                <a class="collapse-item" href="{% url 'login' %}">Entrar</a>
+                <a class="collapse-item" href="{% url 'register_login' %}">Cadastrar-se</a>
+                <div class="collapse-divider"></div>
             </div>
+        </div>
+    </li>
 
-        </ul>
-        <!-- End of Sidebar -->
+        <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Tabelas e Gráficos
+    </div>
+
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'charts' %}">
+            <img class="img-fluid " style="width: 1.5rem;"
+                 src="/static/img/presentation.png" alt="...">
+            <span>Visão Geral</span></a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'tables' %}">
+            <img class="img-fluid " style="width: 1.5rem;"
+                 src="/static/img/annual-report.png" alt="...">
+            <span>Gastos / Ganhos</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'investments' %}">
+            <img class="img-fluid " style="width: 1.5rem;"
+                 src="/static/img/diagram.png" alt="...">
+            <span>Investimentos</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+
+</ul>
+<!-- End of Sidebar -->
